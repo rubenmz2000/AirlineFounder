@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Airline Founder — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript app built with Vite and MUI
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- Vite
+- MUI (Material UI)
+- Axios
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js
+- pnpm
+## Setup
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The dev server runs n Vite's default port. The api base URL is currently hardcoded in `src/api/apiclient.ts` as `http://localhost:5056/api` — if your backend runs elsewhere, update it there (there's no environment variable for this yet).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Building
+```bash
+pnpm build
+pnpm preview
 ```
+
+## Structure
+
+- `src/pages` — one file per screen: `Dashboard,tsx`, `Aerolinea.tsx` (Airline), `Flota.tsx`, `Mercado.tsx` (Market), `PanelDesarrollador.tsx` (Developer Panel)
+- `src/components` — shell components: `Header`, `Footer`, `Sidebar`, `MainContent` (holds the route definitions).
+- `src/services` — one file per API resource (`companyService.ts`, `fleetService.ts`, etc.), wrapping the corresponding backend endpoints.
+- `src/types` — TypeScript interfaces matching the backend DTOs.
+- `src/theme.ts` — the MUI dark theme, matching the color palette of the original WPF prototype.
+
+## Screens
+
+- **Dashboard** — overview: airline name, balance, home base, fleet size and value.
+- **Airline** — view and edit the airline's profile (name, ICAO/IATA codes, home base, country).
+- **Fleet** — table of owned aircraft, with registration, model, location, status, and flight hours.
+- **Market** — catalog of aircraft available to purchase or lease.
+- **Developer Panel** — debug tools (add/subtract money, grant a free aircraft, reset the database). Not meant for production use.
