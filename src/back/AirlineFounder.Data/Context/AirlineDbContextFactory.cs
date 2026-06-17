@@ -7,8 +7,9 @@ public class AirlineDbContextFactory : IDesignTimeDbContextFactory<AirlineDbCont
 {
     public AirlineDbContext CreateDbContext(string[] args)
     {
+        
         var options = new DbContextOptionsBuilder<AirlineDbContext>()
-            .UseSqlite("Data Source=airline_design.db")
+            .UseSqlServer("Server=db.rmzsoftwares.com;Database=AirlineFounderTestDb;User Id=AirlineFounderTest;Password=TU_PASSWORD;TrustServerCertificate=True;")
             .Options;
         return new AirlineDbContext(options);
     }

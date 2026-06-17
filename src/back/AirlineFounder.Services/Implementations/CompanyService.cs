@@ -33,6 +33,23 @@ public class CompanyService : ICompanyService
         await _companyRepository.SaveChangesAsync();
         return company;
     }
+    
+    public async Task<Company> UpdateCompanyAsync(int companyId, string name, string icao, string iata, string homeBase, string country)
+    {
+        var company = await _companyRepository.GetByIdAsync(companyId);
+        if (company == null)
+            throw new InvalidOperationException("Company not found.");
+
+        company.Name = name;
+        company.IcaoCode = icao.ToUpper();
+        company.IataCode = iata.ToUpper();
+        company.HomeBase = homeBase.ToUpper();
+        company.Country = country;
+
+        await _companyRepository.UpdateAsync(company);
+        await _companyRepository.SaveChangesAsync();
+        return company;
+    }
 
     public async Task UpdateMoneyAsync(int companyId, decimal amount)
     {

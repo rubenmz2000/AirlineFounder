@@ -11,6 +11,7 @@ TestResults/
 *.db
 *.sqlite
 *.sqlite3
+*.db*
 
 # Si metes secretos/cadenas de conexión reales en algún appsettings
 appsettings.Development.json
