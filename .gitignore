@@ -1,1 +1,19 @@
-.idea
+bin/
+obj/
+.idea/
+.vs/
+*.user
+*.suo
+TestResults/
+*.nupkg
+
+# Si usas SQLite en local
+*.db
+*.sqlite
+*.sqlite3
+*.db*
+
+# Si metes secretos/cadenas de conexión reales en algún appsettings
+appsettings.Development.json
+appsettings.local.json
+.env
