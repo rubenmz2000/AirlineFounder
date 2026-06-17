@@ -1,8 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineFounder.Core", "src\back\AirlineFounder.Core\AirlineFounder.Core.csproj", "{B7927904-E031-42C4-A284-911E9A071828}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineFounder.Data", "src\back\AirlineFounder.Data\AirlineFounder.Data.csproj", "{FC2461C8-7330-4B15-A52E-7B93AF57E88B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineFounder.Services", "src\back\AirlineFounder.Services\AirlineFounder.Services.csproj", "{47CA9DF3-BA02-4F7D-891F-F97D66DEC14B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7927904-E031-42C4-A284-911E9A071828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7927904-E031-42C4-A284-911E9A071828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7927904-E031-42C4-A284-911E9A071828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7927904-E031-42C4-A284-911E9A071828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2461C8-7330-4B15-A52E-7B93AF57E88B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2461C8-7330-4B15-A52E-7B93AF57E88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2461C8-7330-4B15-A52E-7B93AF57E88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2461C8-7330-4B15-A52E-7B93AF57E88B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47CA9DF3-BA02-4F7D-891F-F97D66DEC14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47CA9DF3-BA02-4F7D-891F-F97D66DEC14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47CA9DF3-BA02-4F7D-891F-F97D66DEC14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47CA9DF3-BA02-4F7D-891F-F97D66DEC14B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
