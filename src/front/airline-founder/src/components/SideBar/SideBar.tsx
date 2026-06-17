@@ -33,7 +33,7 @@ function Sidebar() {
             </Box>
 
             <Box sx={{ p: '12px 20px', borderTop: '1px solid #1E293B' }}>
-                <Typography sx={{ fontSize: 11, color: '#475569' }}>v0.1.0 — Alpha</Typography>
+                <Typography sx={{ fontSize: 11, color: '#475569' }}>v{__APP_VERSION__}</Typography>
                 <Typography sx={{ fontSize: 11, color: '#475569' }}>© RMZ Softwares 2026</Typography>
             </Box>
         </Box>
