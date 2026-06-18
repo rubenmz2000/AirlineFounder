@@ -2,6 +2,12 @@
 
 All notable chagnes to this project are documented here. The format follows [Keep a changelog](https://keepachangelog.com/en/2.0.0), and the project follows [Semantic Versioning](https://semver.org/).
 
+## [X.X.X] - Unreleased
+
+### Fixed
+
+- Deleted several unused imports and configurations from old versions of Grid component that were preventing the front from building
+
 ## [0.1.0] - 2026-06-17
 
 ### Added
