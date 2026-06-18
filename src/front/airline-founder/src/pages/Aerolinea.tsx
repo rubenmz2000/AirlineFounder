@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box, TextField, Button, Typography, Paper, Grid } from '@mui/material';
 import { getCurrentCompany, createCompany, updateCompany } from '../services/companyService.ts';
-import type { Company } from '../../types/company';
+import type { Company } from '../types/company.ts';
 
 function Aerolinea() {
     const [company, setCompany] = useState<Company | null>(null);
@@ -40,6 +40,7 @@ function Aerolinea() {
                 await createCompany({ name, icaoCode, iataCode, homeBase, country });
             }
             setIsEditing(false);
+
             await loadCompany();
         } catch (err: any) {
             setStatusMessage(`Error: ${err.message}`);
@@ -70,23 +71,23 @@ function Aerolinea() {
                         )}
                     </Box>
                     <Grid container spacing={2}>
-                        <Grid item xs={6}>
+                        <Grid size={6}>
                             <FieldLabel text="COMPANY NAME" />
                             <Typography sx={{ fontSize: 18, fontWeight: 600, color: '#F1F5F9' }}>{company!.name}</Typography>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid size={6}>
                             <FieldLabel text="COUNTRY" />
                             <Typography sx={{ fontSize: 14, color: '#F1F5F9' }}>{company!.country}</Typography>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid size={6}>
                             <FieldLabel text="ICAO" />
                             <Typography sx={{ fontSize: 20, fontWeight: 700, color: '#3B82F6' }}>{company!.icaoCode}</Typography>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid size={6}>
                             <FieldLabel text="IATA" />
                             <Typography sx={{ fontSize: 20, fontWeight: 700, color: '#06B6D4' }}>{company!.iataCode}</Typography>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid size={6}>
                             <FieldLabel text="HOME BASE" />
                             <Typography sx={{ fontSize: 16, fontWeight: 600, color: '#F1F5F9' }}>{company!.homeBase}</Typography>
                         </Grid>
@@ -101,28 +102,28 @@ function Aerolinea() {
                     </Typography>
 
                     <Grid container spacing={2} sx={{ mb: 2 }}>
-                        <Grid item xs={6}>
+                        <Grid size={6}>
                             <FieldLabel text="COMPANY NAME *" />
                             <TextField fullWidth size="small" placeholder="e.g. Iberia Airlines" value={name} onChange={e => setName(e.target.value)} />
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid size={6}>
                             <FieldLabel text="COUNTRY" />
                             <TextField fullWidth size="small" placeholder="e.g. Spain" value={country} onChange={e => setCountry(e.target.value)} />
                         </Grid>
                     </Grid>
 
                     <Grid container spacing={2} sx={{ mb: 2 }}>
-                        <Grid item xs={4}>
+                        <Grid size={4}>
                             <FieldLabel text="ICAO CODE *" />
-                            <TextField fullWidth size="small" placeholder="e.g. IBE" inputProps={{ maxLength: 4 }} value={icaoCode} onChange={e => setIcaoCode(e.target.value)} />
+                            <TextField fullWidth size="small" placeholder="e.g. IBE" slotProps={{ htmlInput: {maxLength: 4} }} value={icaoCode} onChange={e => setIcaoCode(e.target.value)} />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid size={4}>
                             <FieldLabel text="IATA CODE" />
-                            <TextField fullWidth size="small" placeholder="e.g. IB" inputProps={{ maxLength: 3 }} value={iataCode} onChange={e => setIataCode(e.target.value)} />
+                            <TextField fullWidth size="small" placeholder="e.g. IB" slotProps={{ htmlInput: {maxLength: 3} }} value={iataCode} onChange={e => setIataCode(e.target.value)} />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid size={4}>
                             <FieldLabel text="HOME BASE (ICAO)" />
-                            <TextField fullWidth size="small" placeholder="e.g. LEMD" inputProps={{ maxLength: 4 }} value={homeBase} onChange={e => setHomeBase(e.target.value)} />
+                            <TextField fullWidth size="small" placeholder="e.g. LEMD" slotProps={{ htmlInput: {maxLength: 4} }} value={homeBase} onChange={e => setHomeBase(e.target.value)} />
                         </Grid>
                     </Grid>
 
