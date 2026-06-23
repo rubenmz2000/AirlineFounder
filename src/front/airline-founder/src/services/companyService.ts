@@ -3,7 +3,7 @@ import type { Company, CreateCompanyRequest } from '../types/company.ts';
 
 export const getCurrentCompany = async (): Promise<Company | null> => {
     try {
-        const response = await apiClient.get<Company>('/Company');
+        const response = await apiClient.get<Company>('/api/Company');
         return response.data;
     } catch (error: any) {
         if (error.response?.status === 404) return null;
@@ -12,11 +12,11 @@ export const getCurrentCompany = async (): Promise<Company | null> => {
 };
 
 export const createCompany = async (data: CreateCompanyRequest): Promise<Company> => {
-    const response = await apiClient.post<Company>('/Company', data);
+    const response = await apiClient.post<Company>('/api/Company', data);
     return response.data;
 };
 
 export const updateCompany = async (data: CreateCompanyRequest): Promise<Company> => {
-    const response = await apiClient.put<Company>('/Company', data);
+    const response = await apiClient.put<Company>('/api/Company', data);
     return response.data;
 };

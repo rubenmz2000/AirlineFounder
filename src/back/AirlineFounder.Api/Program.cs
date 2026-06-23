@@ -1,3 +1,4 @@
+using AirlineFounder.Api.Stores;
 using AirlineFounder.Core.Interfaces;
 using AirlineFounder.Data.Context;
 using AirlineFounder.Data.Repositories;
@@ -17,6 +18,7 @@ builder.Services.AddScoped<IAircraftModelRepository, AircraftModelRepository>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IFleetService, FleetService>();
 builder.Services.AddScoped<IMarketService, MarketService>();
+builder.Services.AddSingleton<AircraftStateStore>();
 
 var corsOrigins = builder.Configuration.GetSection("CorsOrigins").Get<string[]>() ??
                   throw new ArgumentNullException("Need to add cors origins in appsettings.json (List<string>)");

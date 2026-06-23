@@ -5,6 +5,7 @@ import Flota from '../../pages/Flota';
 import Mercado from '../../pages/Mercado';
 import PanelDesarrollador from '../../pages/PanelDesarrollador';
 import Dashboard from '../../pages/Dashboard';
+import FlightMap from '../../pages/FlightMap'
 // import {useState} from "react";
 
 function MainContent() {
@@ -36,6 +37,7 @@ function MainContent() {
                 <Route path="/market" element={<Mercado />} />
                 <Route path="/developer" element={<PanelDesarrollador />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/livemap" element={<FlightMap />} />
             </Routes>
 
 

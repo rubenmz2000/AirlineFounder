@@ -24,6 +24,7 @@ function Sidebar() {
             <Box sx={{ flex: 1, mt: 1.5 }}>
                 <Typography sx={{ fontSize: 10, fontWeight: 700, color: '#475569', m: '8px 20px 4px' }}>MAIN</Typography>
                 <NavLink to="/dashboard" style={navLinkStyle}>Dashboard</NavLink>
+                <NavLink to="/livemap" style={navLinkStyle}>Flight Map</NavLink>
                 <NavLink to="/" style={navLinkStyle}>Airline</NavLink>
                 <NavLink to="/fleet" style={navLinkStyle}>Fleet</NavLink>
                 <NavLink to="/market" style={navLinkStyle}>Market</NavLink>
