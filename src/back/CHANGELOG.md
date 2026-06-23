@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/2.0.0/), and the project follows [Semantinc Versioning](https://semver.org/).
 
+## [X.X.X] - UNRELEASED
+
+### Added
+
+- New endpoint for storing in execution scope the aircraft position.
+
 ## [0.1.0] - 2026-06-17
 
 ### Added

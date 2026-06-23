@@ -2,6 +2,12 @@
 
 All notable chagnes to this project are documented here. The format follows [Keep a changelog](https://keepachangelog.com/en/2.0.0), and the project follows [Semantic Versioning](https://semver.org/).
 
+## [X.X.X] - UNRELEASED
+
+### Added
+
+- New Flight map for tracking the aircraft position.
+
 ## [0.1.1] - 2026-06-18
 
 ### Fixed
