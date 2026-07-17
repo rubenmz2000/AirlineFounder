@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AirlineFounder.Data.Migrations
 {
     [DbContext(typeof(AirlineDbContext))]
-    [Migration("20260617161201_InitialMigration")]
+    [Migration("20260717150005_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -80,9 +80,8 @@ namespace AirlineFounder.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LeasingPricePerMonth")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<decimal>("LeasingPricePerMonth")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Manufacturer")
                         .IsRequired()
@@ -92,9 +91,8 @@ namespace AirlineFounder.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PurchasePrice")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<decimal>("PurchasePrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("RangeKm")
                         .HasColumnType("int");
@@ -109,10 +107,10 @@ namespace AirlineFounder.Data.Migrations
                             Id = 1,
                             Capacity = 165,
                             Description = "Narrow-body workhorse, perfect for medium-haul routes.",
-                            LeasingPricePerMonth = "380000",
+                            LeasingPricePerMonth = 380000m,
                             Manufacturer = "Airbus",
                             Name = "A320neo",
-                            PurchasePrice = "101000000",
+                            PurchasePrice = 101000000m,
                             RangeKm = 6300
                         },
                         new
@@ -120,10 +118,10 @@ namespace AirlineFounder.Data.Migrations
                             Id = 2,
                             Capacity = 194,
                             Description = "Extended narrow-body for high-density routes.",
-                            LeasingPricePerMonth = "480000",
+                            LeasingPricePerMonth = 480000m,
                             Manufacturer = "Airbus",
                             Name = "A321neo",
-                            PurchasePrice = "129500000",
+                            PurchasePrice = 129500000m,
                             RangeKm = 7400
                         },
                         new
@@ -131,10 +129,10 @@ namespace AirlineFounder.Data.Migrations
                             Id = 3,
                             Capacity = 277,
                             Description = "Wide-body for long-haul international routes.",
-                            LeasingPricePerMonth = "780000",
+                            LeasingPricePerMonth = 780000m,
                             Manufacturer = "Airbus",
                             Name = "A330-300",
-                            PurchasePrice = "264000000",
+                            PurchasePrice = 264000000m,
                             RangeKm = 11750
                         },
                         new
@@ -142,10 +140,10 @@ namespace AirlineFounder.Data.Migrations
                             Id = 4,
                             Capacity = 315,
                             Description = "Next-gen wide-body, ultra-long range capability.",
-                            LeasingPricePerMonth = "1100000",
+                            LeasingPricePerMonth = 1100000m,
                             Manufacturer = "Airbus",
                             Name = "A350-900",
-                            PurchasePrice = "317400000",
+                            PurchasePrice = 317400000m,
                             RangeKm = 15000
                         },
                         new
@@ -153,10 +151,10 @@ namespace AirlineFounder.Data.Migrations
                             Id = 5,
                             Capacity = 162,
                             Description = "Classic narrow-body, cost-efficient operations.",
-                            LeasingPricePerMonth = "320000",
+                            LeasingPricePerMonth = 320000m,
                             Manufacturer = "Boeing",
                             Name = "737-800",
-                            PurchasePrice = "89100000",
+                            PurchasePrice = 89100000m,
                             RangeKm = 5765
                         },
                         new
@@ -164,10 +162,10 @@ namespace AirlineFounder.Data.Migrations
                             Id = 6,
                             Capacity = 296,
                             Description = "Dreamliner — fuel-efficient long-haul operations.",
-                            LeasingPricePerMonth = "950000",
+                            LeasingPricePerMonth = 950000m,
                             Manufacturer = "Boeing",
                             Name = "787-9",
-                            PurchasePrice = "292500000",
+                            PurchasePrice = 292500000m,
                             RangeKm = 14140
                         });
                 });
@@ -199,9 +197,8 @@ namespace AirlineFounder.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Money")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<decimal>("Money")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -229,6 +226,10 @@ namespace AirlineFounder.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GoogleSubId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

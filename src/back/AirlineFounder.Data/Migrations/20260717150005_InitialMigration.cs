@@ -23,8 +23,8 @@ namespace AirlineFounder.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Capacity = table.Column<int>(type: "int", nullable: false),
                     RangeKm = table.Column<int>(type: "int", nullable: false),
-                    PurchasePrice = table.Column<string>(type: "TEXT", nullable: false),
-                    LeasingPricePerMonth = table.Column<string>(type: "TEXT", nullable: false),
+                    PurchasePrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    LeasingPricePerMonth = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -38,6 +38,7 @@ namespace AirlineFounder.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    GoogleSubId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -58,7 +59,7 @@ namespace AirlineFounder.Data.Migrations
                     IataCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HomeBase = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Money = table.Column<string>(type: "TEXT", nullable: false),
+                    Money = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -109,12 +110,12 @@ namespace AirlineFounder.Data.Migrations
                 columns: new[] { "Id", "Capacity", "Description", "LeasingPricePerMonth", "Manufacturer", "Name", "PurchasePrice", "RangeKm" },
                 values: new object[,]
                 {
-                    { 1, 165, "Narrow-body workhorse, perfect for medium-haul routes.", "380000", "Airbus", "A320neo", "101000000", 6300 },
-                    { 2, 194, "Extended narrow-body for high-density routes.", "480000", "Airbus", "A321neo", "129500000", 7400 },
-                    { 3, 277, "Wide-body for long-haul international routes.", "780000", "Airbus", "A330-300", "264000000", 11750 },
-                    { 4, 315, "Next-gen wide-body, ultra-long range capability.", "1100000", "Airbus", "A350-900", "317400000", 15000 },
-                    { 5, 162, "Classic narrow-body, cost-efficient operations.", "320000", "Boeing", "737-800", "89100000", 5765 },
-                    { 6, 296, "Dreamliner — fuel-efficient long-haul operations.", "950000", "Boeing", "787-9", "292500000", 14140 }
+                    { 1, 165, "Narrow-body workhorse, perfect for medium-haul routes.", 380000m, "Airbus", "A320neo", 101000000m, 6300 },
+                    { 2, 194, "Extended narrow-body for high-density routes.", 480000m, "Airbus", "A321neo", 129500000m, 7400 },
+                    { 3, 277, "Wide-body for long-haul international routes.", 780000m, "Airbus", "A330-300", 264000000m, 11750 },
+                    { 4, 315, "Next-gen wide-body, ultra-long range capability.", 1100000m, "Airbus", "A350-900", 317400000m, 15000 },
+                    { 5, 162, "Classic narrow-body, cost-efficient operations.", 320000m, "Boeing", "737-800", 89100000m, 5765 },
+                    { 6, 296, "Dreamliner — fuel-efficient long-haul operations.", 950000m, "Boeing", "787-9", 292500000m, 14140 }
                 });
 
             migrationBuilder.CreateIndex(

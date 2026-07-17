@@ -18,15 +18,15 @@ public class AirlineDbContext : DbContext
 
         modelBuilder.Entity<Company>()
             .Property(c => c.Money)
-            .HasColumnType("TEXT");
+            .HasColumnType("decimal(18,2)");
 
         modelBuilder.Entity<AircraftModel>()
             .Property(m => m.PurchasePrice)
-            .HasColumnType("TEXT");
+            .HasColumnType("decimal(18,2)");
 
         modelBuilder.Entity<AircraftModel>()
             .Property(m => m.LeasingPricePerMonth)
-            .HasColumnType("TEXT");
+            .HasColumnType("decimal(18,2)");
 
         modelBuilder.Entity<AircraftModel>().HasData(
             new AircraftModel { Id = 1, Manufacturer = "Airbus", Name = "A320neo", Capacity = 165, RangeKm = 6300, PurchasePrice = 101_000_000, LeasingPricePerMonth = 380_000, Description = "Narrow-body workhorse, perfect for medium-haul routes." },

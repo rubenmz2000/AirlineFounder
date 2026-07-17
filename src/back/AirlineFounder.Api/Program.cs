@@ -21,7 +21,7 @@ builder.Services.AddScoped<IMarketService, MarketService>();
 builder.Services.AddSingleton<AircraftStateStore>();
 
 var corsOrigins = builder.Configuration.GetSection("CorsOrigins").Get<string[]>() ??
-                  throw new ArgumentNullException("Need to add cors origins in appsettings.json (List<string>)");
+                  throw new ArgumentNullException(nameof(ConfigurationBuilder), "Need to add cors origins in appsettings.json (List<string>)");
 
 builder.Services.AddCors(options =>
 {
