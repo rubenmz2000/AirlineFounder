@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:5056',
+    baseURL: import.meta.env.DEV
+        ? 'http://localhost:5056'
+        : 'https://api.airlinefounder.rmzsoftwares.com',
 });
 
 export default apiClient;

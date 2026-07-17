@@ -8,6 +8,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - New endpoint for storing in execution scope the aircraft position.
 
+### Changed
+
+- Changed "TEXT" columns to "decimal(18,2)" for monetary values.
+
 ## [0.1.0] - 2026-06-17
 
 ### Added
